@@ -1,0 +1,27 @@
+{
+    "name": "Thy",
+    "age": 21,
+    "e-mail": "uipi@foxmail.com",
+    "school": "浙江理工大学",
+    "jobs worked on": [
+        {
+            "company": "华东医药供应链（杭州）",
+            "post": "data analyser"
+        }
+    ],
+    "language": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "python",
+        "golang",
+        "dart"
+    ],
+    "tech-stack": [
+        "vue",
+        "gsap",
+        "tailwindCSS",
+        "webAudio"
+    ]
+}

@@ -18,8 +18,7 @@ export default defineConfig({
       "^": resolve(__dirname, "src/styles"),
     }
   },
-  server: {
-    host: "0.0.0.0",
-    port: 3333,
-  },
+  // server: {
+  //   host: "0.0.0.0",
+  // },
 })

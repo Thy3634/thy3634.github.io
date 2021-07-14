@@ -1,5 +1,8 @@
 const colors = require('tailwindcss/colors')
 
+
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   // 配置 purge 选项指定所有的 pages 和 components 文件，使得 Tailwind 可以在生产构建中对未使用的样式进行摇树优化。
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -847,7 +850,7 @@ module.exports = {
     backgroundAttachment: ['responsive'],
     backgroundBlendMode: ['responsive'],
     backgroundClip: ['responsive'],
-    backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus', 'disabled'],
     backgroundImage: ['responsive'],
     backgroundOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
@@ -905,6 +908,7 @@ module.exports = {
     gridTemplateRows: ['responsive'],
     height: ['responsive'],
     hueRotate: ['responsive'],
+    // top, right, bottom, left
     inset: ['responsive'],
     invert: ['responsive'],
     isolation: ['responsive'],
@@ -972,5 +976,14 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    // 额外变体
+    plugin(function ({ addVariant, e }) {
+      addVariant('disabled', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`disabled${separator}${className}`)}:disabled`
+        })
+      })
+    })
+  ],
 }
