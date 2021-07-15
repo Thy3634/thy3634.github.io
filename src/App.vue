@@ -1,12 +1,17 @@
 <template>
+  <Header></Header>
   <router-view />
 </template>
 
 <script lang="ts">
 import { defineComponent, provide, ref, watch } from 'vue'
+import Header from './layouts/Header.vue'
 
 export default defineComponent({
   name: 'App',
+  components: {
+    Header,
+  },
   setup() {
     const scheme = ref('dark')
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -36,5 +41,6 @@ body {
 #app {
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
+  @apply flex flex-col items-center relative;
 }
 </style>

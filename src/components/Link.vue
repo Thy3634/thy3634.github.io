@@ -1,8 +1,10 @@
 <template>
   <component
-    :is="route? 'router-link':'a'"
+    :is="isOut ? 'a' : 'router-link'"
     :href="href"
-    class="relative hover-underline"
+    :to="href"
+    class="relative"
+    :class="underline ? 'link-underline' : ''"
   >
     <slot></slot>
   </component>
@@ -16,24 +18,29 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    underline: {
+      type: Boolean,
+      default: true,
+    }
   },
   setup(props) {
     const { href } = toRefs(props)
-    const route = ref(false)
+    const isOut = ref(false)
     if (href.value.startsWith('http')) {
-      route.value = true
+      isOut.value = true
     }
     return {
-      route
+      isOut
     }
   }
 });
 </script>
 <style scoped>
-.hover-underline::after {
-  @apply absolute bg-current -bottom-1 h-px w-4/5 origin-left transition duration-300 scale-x-0 opacity-0;
+.link-underline::after {
+  content: "";
+  @apply absolute bg-current left-0 -bottom-1 h-px w-0 origin-left transition-all duration-500 opacity-0;
 }
-.hover-underline:hover::after {
-  @apply scale-x-100 opacity-100;
+.link-underline:hover::after {
+  @apply w-4/5 opacity-100;
 }
 </style>

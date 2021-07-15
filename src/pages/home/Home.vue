@@ -2,18 +2,20 @@
   <section class="w-full h-screen">
     <NoisySphere />
     <h1
-      preset="float"
-      class="text-5xl md:text-7xl lg-text-9xl transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold absolute text-white dark:text-black"
+      class="text-5xl md:text-7xl lg-text-9xl transform left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 font-bold absolute text-white dark:text-black"
     >
       Think diffrent.
       <br />Code greater.
     </h1>
   </section>
-  <main class="flex flex-col">
-    <section class="flex flex-col items-center my-4 z-10">
-      <Code lang="json" :code="selfIntroduction" class="h-96 w-80 sm:w-11/12 max-w-7xl" />
-    </section>
-  </main>
+  <section class="flex justify-center p-4 z-10 w-full bg-indigo-300 dark:bg-purple-400">
+    <Code
+      lang="json"
+      :code="selfIntroduction"
+      bar="Introduction - thy3634.github.io - CodeWindow"
+      class="w-11/12 md:w-3/4 h-96"
+    />
+  </section>
 </template>
 <script lang='ts'>
 import { defineComponent } from "vue";

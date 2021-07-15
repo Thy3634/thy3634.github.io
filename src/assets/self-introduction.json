@@ -6,7 +6,7 @@
     "jobs worked on": [
         {
             "company": "华东医药供应链（杭州）",
-            "post": "data analyser"
+            "post": "运营数据分析"
         }
     ],
     "language": [
@@ -20,6 +20,7 @@
     ],
     "tech-stack": [
         "vue",
+        "three",
         "gsap",
         "tailwindCSS",
         "webAudio"
