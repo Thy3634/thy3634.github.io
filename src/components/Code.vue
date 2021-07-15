@@ -6,7 +6,7 @@
       <li class="bg-green-700 w-4 h-4 ml-2 rounded-full"></li>
       <li
         v-if="typeof bar == 'string'"
-        class="w-40 md:w-auto transform -translate-x-10 truncate mx-auto"
+        class="w-24 md:w-auto transform -translate-x-10 truncate mx-auto"
       >{{ bar }}</li>
     </ul>
     <div class="overflow-auto">
